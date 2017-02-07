@@ -3,11 +3,15 @@
     <% if current_user %>
         <%= link_to current_user.display_name, user_path(current_user) %>
         |
-        <%= link_to t('nav.sign_out'), main_app.destroy_user_session_path,
+        <%= link_to 'Community', thredded.root_path %>
+        |
+        <%= link_to 'Logout', main_app.destroy_user_session_path,
                     method: :delete %>
     <% else %>
-        <%= link_to t('nav.sign_in'), main_app.new_user_session_path %>
+        <%= link_to t('nav.login'), main_app.new_user_session_path %>
+        |
+        <%= link_to 'Sign up', main_app.new_user_registration_path %>
     <% end %>
   </span>
-  <a class="app-nav-logo" href="/"><%= t 'brand.name' %></a>
+  <a class="app-nav-logo" href="/">[ BLANK ]</a>
 </header>
